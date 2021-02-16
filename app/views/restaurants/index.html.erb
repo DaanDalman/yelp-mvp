@@ -1,7 +1,13 @@
-<h1>Index</h1>
-<ul>
-<% @restaurants.each do |restaurant| %>
- <li><%= link_to restaurant.name, restaurant_path(restaurant)%></li>
-<% end %>
-</ul>
 <%= link_to "add restaurant", restaurant_path(:new) %>
+<div class="card">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+  <% @restaurants.each do |restaurant| %>
+    <h5 class="card-title my-3 b-1"><%= restaurant.name %></h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <%= link_to "More info", restaurant_path(restaurant)%>
+    <% end %>
+  </div>
+</div>
